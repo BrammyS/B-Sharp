@@ -1,0 +1,18 @@
+void Main()
+{
+    int number1 = ReadConsoleInt();
+    //int number2 = ReadConsoleInt(); Unable to use any read console methods twice in a unit tests because of a bug in the sandbox.
+    int number2 = 10;
+    bool madeMistake = number1 > number2 || number2 < 0;
+    if (madeMistake) {
+        WriteLine("You made a mistake");
+    } else {
+        WriteLine(madeMistake);
+    }
+    bool isCorrect = number1 > number2 && number2 < 0;
+    if (isCorrect) {
+        WriteLine("true");
+    } else {
+        WriteLine("false");
+    }
+}

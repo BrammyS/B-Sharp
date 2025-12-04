@@ -1,0 +1,11 @@
+void Main(){
+    OtherMethod1();
+}
+
+void OtherMethod1(){
+    OtherMethod2();
+}
+
+void OtherMethod2(){
+    WriteLine("Hello World 2!");
+}

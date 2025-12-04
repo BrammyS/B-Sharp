@@ -1,0 +1,7 @@
+void Main(){
+    WriteLine(Number());
+}
+
+int Number(){
+    return 1;
+}

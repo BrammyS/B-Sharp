@@ -1,0 +1,3 @@
+void Main(){
+    WriteLine(123 + 123.123);
+}

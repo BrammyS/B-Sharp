@@ -1,0 +1,4 @@
+void Main()
+{
+    WriteLine(1 + 1);
+}

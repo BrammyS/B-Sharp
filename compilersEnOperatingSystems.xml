@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="compilersenoperatingsystems" default="all">
+
+
+    <property file="compilersEnOperatingSystems.properties"/>
+    <!-- Uncomment the following property if no tests compilation is needed -->
+    <!--
+    <property name="skip.tests" value="true"/>
+     -->
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="700m"/>
+    <patternset id="ignored.files">
+        <exclude name="**/*.pyc/**"/>
+        <exclude name="**/*.pyo/**"/>
+        <exclude name="**/*.rbc/**"/>
+        <exclude name="**/*.yarb/**"/>
+        <exclude name="**/*~/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name="**/.hg/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/__pycache__/**"/>
+        <exclude name="**/_svn/**"/>
+        <exclude name="**/vssver.scc/**"/>
+        <exclude name="**/vssver2.scc/**"/>
+    </patternset>
+    <patternset id="library.patterns">
+        <include name="*.egg"/>
+        <include name="*.zip"/>
+        <include name="*.war"/>
+        <include name="*.swc"/>
+        <include name="*.ear"/>
+        <include name="*.jar"/>
+        <include name="*.klib"/>
+        <include name="*.ane"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <exclude name="**/?*.java"/>
+        <exclude name="**/?*.form"/>
+        <exclude name="**/?*.class"/>
+        <exclude name="**/?*.groovy"/>
+        <exclude name="**/?*.scala"/>
+        <exclude name="**/?*.flex"/>
+        <exclude name="**/?*.kt"/>
+        <exclude name="**/?*.clj"/>
+        <exclude name="**/?*.aj"/>
+    </patternset>
+
+    <!-- JDK definitions -->
+
+    <property name="jdk.bin.16" value="${jdk.home.16}/bin"/>
+    <path id="jdk.classpath.16">
+        <fileset dir="${jdk.home.16}">
+            <include name="../jdk-16.0.2!/java.base"/>
+            <include name="../jdk-16.0.2!/java.compiler"/>
+            <include name="../jdk-16.0.2!/java.datatransfer"/>
+            <include name="../jdk-16.0.2!/java.desktop"/>
+            <include name="../jdk-16.0.2!/java.instrument"/>
+            <include name="../jdk-16.0.2!/java.logging"/>
+            <include name="../jdk-16.0.2!/java.management"/>
+            <include name="../jdk-16.0.2!/java.management.rmi"/>
+            <include name="../jdk-16.0.2!/java.naming"/>
+            <include name="../jdk-16.0.2!/java.net.http"/>
+            <include name="../jdk-16.0.2!/java.prefs"/>
+            <include name="../jdk-16.0.2!/java.rmi"/>
+            <include name="../jdk-16.0.2!/java.scripting"/>
+            <include name="../jdk-16.0.2!/java.se"/>
+            <include name="../jdk-16.0.2!/java.security.jgss"/>
+            <include name="../jdk-16.0.2!/java.security.sasl"/>
+            <include name="../jdk-16.0.2!/java.smartcardio"/>
+            <include name="../jdk-16.0.2!/java.sql"/>
+            <include name="../jdk-16.0.2!/java.sql.rowset"/>
+            <include name="../jdk-16.0.2!/java.transaction.xa"/>
+            <include name="../jdk-16.0.2!/java.xml"/>
+            <include name="../jdk-16.0.2!/java.xml.crypto"/>
+            <include name="../jdk-16.0.2!/jdk.accessibility"/>
+            <include name="../jdk-16.0.2!/jdk.attach"/>
+            <include name="../jdk-16.0.2!/jdk.charsets"/>
+            <include name="../jdk-16.0.2!/jdk.compiler"/>
+            <include name="../jdk-16.0.2!/jdk.crypto.cryptoki"/>
+            <include name="../jdk-16.0.2!/jdk.crypto.ec"/>
+            <include name="../jdk-16.0.2!/jdk.crypto.mscapi"/>
+            <include name="../jdk-16.0.2!/jdk.dynalink"/>
+            <include name="../jdk-16.0.2!/jdk.editpad"/>
+            <include name="../jdk-16.0.2!/jdk.hotspot.agent"/>
+            <include name="../jdk-16.0.2!/jdk.httpserver"/>
+            <include name="../jdk-16.0.2!/jdk.incubator.foreign"/>
+            <include name="../jdk-16.0.2!/jdk.incubator.vector"/>
+            <include name="../jdk-16.0.2!/jdk.internal.ed"/>
+            <include name="../jdk-16.0.2!/jdk.internal.jvmstat"/>
+            <include name="../jdk-16.0.2!/jdk.internal.le"/>
+            <include name="../jdk-16.0.2!/jdk.internal.opt"/>
+            <include name="../jdk-16.0.2!/jdk.internal.vm.ci"/>
+            <include name="../jdk-16.0.2!/jdk.jartool"/>
+            <include name="../jdk-16.0.2!/jdk.javadoc"/>
+            <include name="../jdk-16.0.2!/jdk.jcmd"/>
+            <include name="../jdk-16.0.2!/jdk.jconsole"/>
+            <include name="../jdk-16.0.2!/jdk.jdeps"/>
+            <include name="../jdk-16.0.2!/jdk.jdi"/>
+            <include name="../jdk-16.0.2!/jdk.jdwp.agent"/>
+            <include name="../jdk-16.0.2!/jdk.jfr"/>
+            <include name="../jdk-16.0.2!/jdk.jlink"/>
+            <include name="../jdk-16.0.2!/jdk.jpackage"/>
+            <include name="../jdk-16.0.2!/jdk.jshell"/>
+            <include name="../jdk-16.0.2!/jdk.jsobject"/>
+            <include name="../jdk-16.0.2!/jdk.jstatd"/>
+            <include name="../jdk-16.0.2!/jdk.localedata"/>
+            <include name="../jdk-16.0.2!/jdk.management"/>
+            <include name="../jdk-16.0.2!/jdk.management.agent"/>
+            <include name="../jdk-16.0.2!/jdk.management.jfr"/>
+            <include name="../jdk-16.0.2!/jdk.naming.dns"/>
+            <include name="../jdk-16.0.2!/jdk.naming.rmi"/>
+            <include name="../jdk-16.0.2!/jdk.net"/>
+            <include name="../jdk-16.0.2!/jdk.nio.mapmode"/>
+            <include name="../jdk-16.0.2!/jdk.sctp"/>
+            <include name="../jdk-16.0.2!/jdk.security.auth"/>
+            <include name="../jdk-16.0.2!/jdk.security.jgss"/>
+            <include name="../jdk-16.0.2!/jdk.unsupported"/>
+            <include name="../jdk-16.0.2!/jdk.unsupported.desktop"/>
+            <include name="../jdk-16.0.2!/jdk.xml.dom"/>
+            <include name="../jdk-16.0.2!/jdk.zipfs"/>
+        </fileset>
+    </path>
+
+    <property name="project.jdk.home" value="${jdk.home.16}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.16}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.16"/>
+
+
+    <!-- Project Libraries -->
+
+    <path id="library.antlr-runtime-4.9.1.classpath">
+        <fileset dir="${basedir}/lib/" includes="**/*.jar"/>
+    </path>
+
+    <path id="library.jasmin.classpath">
+        <pathelement location="${basedir}/lib/jasmin.jar"/>
+    </path>
+
+    <!-- Modules -->
+
+
+    <!-- Module CompilerBase -->
+
+    <dirname property="module.compilerbase.basedir" file="${ant.file}"/>
+
+
+    <property name="module.jdk.home.compilerbase" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.compilerbase" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.compilerbase" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.compilerbase" value="-encoding UTF-8 -source 16 -target 16 ${compiler.args}"/>
+
+    <property name="compilerbase.output.dir" value="${module.compilerbase.basedir}/out/production/CompilerBase"/>
+    <property name="compilerbase.testoutput.dir" value="${module.compilerbase.basedir}/out/test/CompilerBase"/>
+
+    <path id="compilerbase.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="compilerbase.module.production.classpath">
+        <path refid="${module.jdk.classpath.compilerbase}"/>
+        <path refid="library.jasmin.classpath"/>
+        <path refid="library.antlr-runtime-4.9.1.classpath"/>
+
+    </path>
+
+    <path id="compilerbase.runtime.production.module.classpath">
+        <pathelement location="${compilerbase.output.dir}"/>
+        <path refid="library.jasmin.classpath"/>
+        <path refid="library.antlr-runtime-4.9.1.classpath"/>
+
+    </path>
+
+    <path id="compilerbase.module.classpath">
+        <path refid="${module.jdk.classpath.compilerbase}"/>
+        <pathelement location="${compilerbase.output.dir}"/>
+        <path refid="library.jasmin.classpath"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.4.2/junit-jupiter-params-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.4.2/junit-jupiter-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.4.2/junit-jupiter-params-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.4.2/junit-jupiter-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
+        <path refid="library.antlr-runtime-4.9.1.classpath"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar"/>
+
+    </path>
+
+    <path id="compilerbase.runtime.module.classpath">
+        <pathelement location="${compilerbase.testoutput.dir}"/>
+        <pathelement location="${compilerbase.output.dir}"/>
+        <path refid="library.jasmin.classpath"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.4.2/junit-jupiter-params-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.4.2/junit-jupiter-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.4.2/junit-jupiter-params-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.4.2/junit-jupiter-5.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
+        <path refid="library.antlr-runtime-4.9.1.classpath"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar"/>
+        <pathelement
+                location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar"/>
+
+    </path>
+
+
+    <patternset id="excluded.from.module.compilerbase">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.compilerbase">
+        <patternset refid="excluded.from.module.compilerbase"/>
+    </patternset>
+
+    <path id="compilerbase.module.sourcepath">
+        <dirset dir="${module.compilerbase.basedir}">
+            <include name="src"/>
+            <include name="gen"/>
+        </dirset>
+    </path>
+
+    <path id="compilerbase.module.test.sourcepath">
+        <dirset dir="${module.compilerbase.basedir}">
+            <include name="testFiles"/>
+            <include name="tests"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.compilerbase"
+            depends="compile.module.compilerbase.production,compile.module.compilerbase.tests"
+            description="Compile module CompilerBase"/>
+
+    <target name="compile.module.compilerbase.production" description="Compile module CompilerBase; production classes">
+        <mkdir dir="${compilerbase.output.dir}"/>
+        <javac destdir="${compilerbase.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+               memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.compilerbase}/javac">
+            <compilerarg line="${compiler.args.compilerbase}"/>
+            <bootclasspath refid="compilerbase.module.bootclasspath"/>
+            <classpath refid="compilerbase.module.production.classpath"/>
+            <src refid="compilerbase.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.compilerbase"/>
+        </javac>
+
+        <copy todir="${compilerbase.output.dir}">
+            <fileset dir="${module.compilerbase.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.compilerbase.basedir}/gen">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.compilerbase.tests" depends="compile.module.compilerbase.production"
+            description="compile module CompilerBase; test classes" unless="skip.tests">
+        <mkdir dir="${compilerbase.testoutput.dir}"/>
+        <javac destdir="${compilerbase.testoutput.dir}" debug="${compiler.debug}"
+               nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+               executable="${module.jdk.bin.compilerbase}/javac">
+            <compilerarg line="${compiler.args.compilerbase}"/>
+            <bootclasspath refid="compilerbase.module.bootclasspath"/>
+            <classpath refid="compilerbase.module.classpath"/>
+            <src refid="compilerbase.module.test.sourcepath"/>
+            <patternset refid="excluded.from.compilation.compilerbase"/>
+        </javac>
+
+        <copy todir="${compilerbase.testoutput.dir}">
+            <fileset dir="${module.compilerbase.basedir}/testFiles">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.compilerbase.basedir}/tests">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean.module.compilerbase" description="cleanup module">
+        <delete dir="${compilerbase.output.dir}"/>
+        <delete dir="${compilerbase.testoutput.dir}"/>
+    </target>
+
+    <target name="init" description="Build initialization">
+        <!-- Perform any build initialization in this target -->
+    </target>
+
+    <target name="clean" depends="clean.module.compilerbase" description="cleanup all"/>
+
+    <target name="build.modules" depends="init, clean, compile.module.compilerbase" description="build all modules"/>
+
+    <target name="all" depends="build.modules" description="build all"/>
+</project>

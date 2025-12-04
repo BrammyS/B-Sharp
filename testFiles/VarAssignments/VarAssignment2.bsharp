@@ -1,0 +1,5 @@
+void Main(){
+    int number;
+    number = 123;
+    WriteLine(number);
+}

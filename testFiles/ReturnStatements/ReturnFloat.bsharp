@@ -1,0 +1,7 @@
+void Main(){
+    WriteLine(Value());
+}
+
+float Value(){
+    return 1.123;
+}

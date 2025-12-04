@@ -1,0 +1,4 @@
+void Main(){
+    return;
+    WriteLine("Hello World!");
+}

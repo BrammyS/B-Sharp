@@ -1,0 +1,10 @@
+void Main()
+{
+    WriteLine(Test('a', 'b'));
+}
+
+char Test(char owo, char owo2){
+    WriteLine(owo);
+    WriteLine(owo2);
+    return 'c';
+}

@@ -1,0 +1,5 @@
+void Main()
+{
+    var text = "This is a string value stored in a var.";
+    WriteLine(text);
+}

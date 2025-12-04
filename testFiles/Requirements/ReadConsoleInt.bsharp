@@ -1,0 +1,6 @@
+void Main()
+{
+    int number = ReadConsoleInt();
+    bool isHigherThen5 = number > 5;
+    WriteLine(isHigherThen5);
+}

@@ -1,0 +1,15 @@
+void Main(){
+    if(ReadConsoleInt() == 1){
+        HelloWorld();
+    }else{
+        ByeWorld();
+    }
+}
+
+void HelloWorld(){
+    WriteLine("Hello World!");
+}
+
+void ByeWorld(){
+    WriteLine("Bye World!");
+}

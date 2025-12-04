@@ -1,0 +1,11 @@
+void Main()
+{
+    int requiredAnswer = 10;
+    int number = ReadConsoleInt();
+
+    while(number != requiredAnswer){
+        WriteLine("Incorrect guess!");
+        number = ReadConsoleInt();
+    }
+    WriteLine("Correct guess!");
+}

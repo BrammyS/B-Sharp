@@ -1,0 +1,7 @@
+void Main(){
+    WriteLine(Text());
+}
+
+string Text(){
+    return "Hello World!";
+}

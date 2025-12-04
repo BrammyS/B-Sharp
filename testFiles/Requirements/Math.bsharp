@@ -1,0 +1,6 @@
+void Main()
+{
+    int number = 3 + 5 * 6 / (5 * 2) - 6;
+    number = number + 10;
+    WriteLine(number);
+}

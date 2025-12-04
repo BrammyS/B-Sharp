@@ -1,0 +1,11 @@
+void Main()
+{
+    WriteLine(true || true);
+    WriteLine(123 == 123);
+    WriteLine(123 != 123 || 2 == 2);
+    WriteLine(123 + 123 == 123);
+    WriteLine(45 != 45);
+    WriteLine(true && false);
+    WriteLine(false || 123 == 124 || false);
+    WriteLine(12 == 12 || true && false);
+}

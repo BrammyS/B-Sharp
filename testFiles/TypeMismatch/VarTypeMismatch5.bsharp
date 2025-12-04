@@ -1,0 +1,5 @@
+void Main(){
+    int variable1;
+    string variable2;
+    variable2 = variable1 = 123;
+}

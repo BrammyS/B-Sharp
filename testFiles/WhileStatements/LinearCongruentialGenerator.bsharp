@@ -1,0 +1,17 @@
+void Main()
+{
+    LinearCongruentialGenerator(10, 5);
+}
+
+void LinearCongruentialGenerator(int amountOfNumbers, int seed){
+    var previous = seed;
+    var mod = 7;
+    var inc = 3;
+    var multiplier = 3;
+
+    var counter = 0;
+    while(counter < amountOfNumbers){
+        counter = counter + 1;
+        WriteLine(previous = ((previous * multiplier) + inc) % mod );
+    }
+}
